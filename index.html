@@ -12,8 +12,17 @@
       <button>Log in</button>
     </div>
     <div class="body">
-      <button>+ Add book</button>
+      <button class="addBook">+ Add book</button>
       <div class="content"></div>
+      <form class="is-inactive">
+        <input type="text" class="title" placeholder="Title" />
+        <input type="text" class="author" placeholder="Author" />
+        <input type="number" class="pages" placeholder="Pages" />
+        <fieldset>
+          <label for="read">Have you read it?</label>
+          <input type="checkbox" class="read" id="read" />
+        </fieldset>
+      </form>
     </div>
     <div class="footer">
       <p>Nicholas-Battista 2024</p>

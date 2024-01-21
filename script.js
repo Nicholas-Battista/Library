@@ -1,4 +1,6 @@
 const content = document.querySelector(".content");
+const addBook = document.querySelector(".addBook");
+const form = document.querySelector("form");
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -12,10 +14,10 @@ function addToLibrary(book) {
   myLibrary.push(book);
 }
 
-const theHobbit = new Book("hobbit", "JRR TOLK", 250, "i have read");
-addToLibrary(theHobbit);
-const one = new Book("one piece", "oda", 250, "i have not");
-addToLibrary(one);
+// const theHobbit = new Book("hobbit", "JRR TOLK", 250, "i have read");
+// addToLibrary(theHobbit);
+// const one = new Book("one piece", "oda", 250, "i have not");
+// addToLibrary(one);
 
 myLibrary.forEach((book) => {
   let div = document.createElement("div");
@@ -38,4 +40,8 @@ myLibrary.forEach((book) => {
 
   div.classList.add("book");
   content.appendChild(div);
+});
+
+addBook.addEventListener("click", () => {
+  form.classList.toggle("is-inactive");
 });

@@ -27,18 +27,27 @@ body {
   flex-direction: column;
 }
 
+.body button {
+  margin-top: 2%;
+}
+
 .content {
   width: 70%;
   flex: 1;
+  margin-top: 2%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-auto-rows: 1fr;
-  gap: 10px;
+  gap: 5%;
 }
 
 .book {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer {

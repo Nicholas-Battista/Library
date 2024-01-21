@@ -14,6 +14,8 @@ function addToLibrary(book) {
 
 const theHobbit = new Book("hobbit", "JRR TOLK", 250, "i have read");
 addToLibrary(theHobbit);
+const one = new Book("one piece", "oda", 250, "i have not");
+addToLibrary(one);
 
 myLibrary.forEach((book) => {
   let div = document.createElement("div");

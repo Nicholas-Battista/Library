@@ -7,6 +7,7 @@ const inputs = {
   inputTitle: document.querySelector(".title"),
   inputAuthor: document.querySelector(".author"),
   inputPages: document.querySelector(".pages"),
+  inputRead: document.querySelector(".read"),
 };
 const myLibrary = [];
 
@@ -23,11 +24,12 @@ function addToLibrary(book) {
 
 function handleSubmitBtn(event) {
   event.preventDefault();
+
   const newBook = new Book(
     inputs.inputTitle.value,
     inputs.inputAuthor.value,
     inputs.inputPages.value,
-    "i have read"
+    inputs.inputRead.checked
   );
   addToLibrary(newBook);
   form.reset();
@@ -55,7 +57,7 @@ function displayLibrary() {
     div.appendChild(pages);
 
     let read = document.createElement("p");
-    read.innerHTML = book.read;
+    read.innerHTML = book.read ? "Read" : "Not read";
     div.appendChild(read);
 
     div.classList.add("book");

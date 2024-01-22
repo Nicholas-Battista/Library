@@ -59,6 +59,11 @@ function displayLibrary() {
 
     let read = document.createElement("p");
     read.innerHTML = book.read ? "Read" : "Not read";
+    if (read.innerHTML === "Read") {
+      read.style.backgroundColor = "#05F140";
+    } else {
+      read.style.backgroundColor = "red";
+    }
     div.appendChild(read);
 
     div.classList.add("book");

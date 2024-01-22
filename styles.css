@@ -3,6 +3,13 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  color: var(--lightgray);
+}
+
+:root {
+  --darkgray: #555a62;
+  --black: #131416;
+  --lightgray: #e9eaec;
 }
 
 body {
@@ -15,9 +22,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20% 0 20%;
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  background-color: var(--black);
+  border-bottom: 2px solid var(--lightgray);
+  box-shadow: 0 1px 1px hsl(220deg 6% 73% / 0.075),
+    0 2px 2px hsl(220deg 6% 73% / 0.075), 0 4px 4px hsl(220deg 6% 73% / 0.075),
+    0 8px 8px hsl(220deg 6% 73% / 0.075), 0 16px 16px hsl(220deg 6% 73% / 0.075);
 }
 
 .body {
@@ -26,6 +35,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  background-color: var(--black);
 }
 
 .addBook {
@@ -36,10 +46,11 @@ body {
   font-size: 1rem;
   padding: 1rem 2rem;
   z-index: 1;
+  color: var(--lightgray);
 }
 
 .addBook:hover {
-  background-color: lightgray;
+  background-color: var(--darkgray);
   cursor: pointer;
 }
 
@@ -55,18 +66,23 @@ body {
 }
 
 .book {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--darkgray);
+  border-radius: 1rem;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 form {
   position: absolute;
   bottom: 40%;
   display: flex;
-  background-color: white;
+  background-color: var(--darkgray);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -84,6 +100,12 @@ input {
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid black;
+  background-color: var(--black);
+  color: var(--lightgray);
+}
+
+input:focus {
+  border: 1px solid var(--lightgray);
 }
 
 .read {
@@ -102,11 +124,25 @@ fieldset {
   gap: 3px;
 }
 
+.submit {
+  border: none;
+  padding: 0.5rem 1rem;
+  color: var(--lightgray);
+  background-color: var(--black);
+  border-radius: 0.5rem;
+}
+
+.submit:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  background-color: var(--black);
 }
 
 .footer img {

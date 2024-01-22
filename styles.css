@@ -27,8 +27,18 @@ body {
   flex-direction: column;
 }
 
-.body button {
+.addBook {
   margin-top: 2%;
+  border: none;
+  background-color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.addBook:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .content {

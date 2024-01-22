@@ -62,8 +62,17 @@ function displayLibrary() {
     if (read.innerHTML === "Read") {
       read.style.backgroundColor = "#05F140";
     } else {
-      read.style.backgroundColor = "red";
+      read.style.backgroundColor = "#EF6F6C";
     }
+    read.addEventListener("click", () => {
+      if (read.innerHTML === "Read") {
+        read.innerHTML = "Not Read";
+        read.style.backgroundColor = "#EF6F6C";
+      } else {
+        read.innerHTML = "Read";
+        read.style.backgroundColor = "#05F140";
+      }
+    });
     div.appendChild(read);
 
     div.classList.add("book");

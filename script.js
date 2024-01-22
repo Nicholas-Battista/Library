@@ -9,6 +9,7 @@ const inputs = {
   inputPages: document.querySelector(".pages"),
   inputRead: document.querySelector(".read"),
 };
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -74,6 +75,30 @@ function displayLibrary() {
       }
     });
     div.appendChild(read);
+
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+
+    let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute(
+      "d",
+      "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z"
+    );
+
+    svg.appendChild(path);
+    div.appendChild(svg);
+    svg.addEventListener("click", () => {
+      div.remove();
+
+      const index = myLibrary.findIndex(
+        (bookItem) => bookItem.title === book.title
+      );
+      if (index !== -1) {
+        myLibrary.splice(index, 1);
+      }
+      console.log(myLibrary);
+    });
 
     div.classList.add("book");
     content.appendChild(div);

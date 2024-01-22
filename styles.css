@@ -55,6 +55,23 @@ body {
   cursor: pointer;
 }
 
+.header h1 {
+  letter-spacing: 2px;
+}
+
+.header button {
+  border: none;
+  padding: 1rem 2rem;
+  color: var(--lightgray);
+  background-color: var(--darkgray);
+}
+
+.header button:hover {
+  cursor: pointer;
+  background-color: var(--lightgray);
+  color: var(--darkgray);
+}
+
 .content {
   width: 70%;
   flex: 1;
@@ -69,7 +86,8 @@ body {
   /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 20px 0;
   align-items: center;
   background-color: var(--darkgray);
   border-radius: 1rem;
@@ -82,6 +100,7 @@ body {
 .book p {
   font-size: 1.3rem;
   padding: 0 7rem;
+  margin: 0;
   /* border-bottom: 1px solid var(--black); */
 }
 
@@ -175,4 +194,27 @@ fieldset {
   height: 100%;
   background: rgba(128, 128, 128, 0.5);
   z-index: 1;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.name svg {
+  fill: var(--lightgray);
+  height: 30px;
+  width: 35px;
+}
+
+.book svg {
+  height: 30px;
+  width: 35px;
+  fill: var(--lightgray);
+}
+
+.book svg:hover {
+  cursor: pointer;
 }

@@ -1,6 +1,13 @@
 const content = document.querySelector(".content");
 const addBook = document.querySelector(".addBook");
 const form = document.querySelector("form");
+const submit = document.querySelector(".submit");
+
+const inputs = {
+  inputTitle: document.querySelector(".title"),
+  inputAuthor: document.querySelector(".author"),
+  inputPages: document.querySelector(".pages"),
+};
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -14,33 +21,47 @@ function addToLibrary(book) {
   myLibrary.push(book);
 }
 
-// const theHobbit = new Book("hobbit", "JRR TOLK", 250, "i have read");
-// addToLibrary(theHobbit);
-// const one = new Book("one piece", "oda", 250, "i have not");
-// addToLibrary(one);
+function handleSubmitBtn(event) {
+  event.preventDefault();
+  const newBook = new Book(
+    inputs.inputTitle.value,
+    inputs.inputAuthor.value,
+    inputs.inputPages.value,
+    "i have read"
+  );
+  addToLibrary(newBook);
+  form.reset();
+  form.classList.toggle("is-inactive");
+  displayLibrary();
+}
 
-myLibrary.forEach((book) => {
-  let div = document.createElement("div");
+submit.addEventListener("click", handleSubmitBtn);
 
-  let title = document.createElement("p");
-  title.innerHTML = book.title;
-  div.appendChild(title);
+function displayLibrary() {
+  content.innerHTML = "";
+  myLibrary.forEach((book) => {
+    let div = document.createElement("div");
 
-  let author = document.createElement("p");
-  author.innerHTML = book.author;
-  div.appendChild(author);
+    let title = document.createElement("p");
+    title.innerHTML = book.title;
+    div.appendChild(title);
 
-  let pages = document.createElement("p");
-  pages.innerHTML = book.pages;
-  div.appendChild(pages);
+    let author = document.createElement("p");
+    author.innerHTML = book.author;
+    div.appendChild(author);
 
-  let read = document.createElement("p");
-  read.innerHTML = book.read;
-  div.appendChild(read);
+    let pages = document.createElement("p");
+    pages.innerHTML = book.pages;
+    div.appendChild(pages);
 
-  div.classList.add("book");
-  content.appendChild(div);
-});
+    let read = document.createElement("p");
+    read.innerHTML = book.read;
+    div.appendChild(read);
+
+    div.classList.add("book");
+    content.appendChild(div);
+  });
+}
 
 addBook.addEventListener("click", () => {
   form.classList.toggle("is-inactive");

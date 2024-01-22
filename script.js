@@ -47,15 +47,15 @@ function displayLibrary() {
     let div = document.createElement("div");
 
     let title = document.createElement("p");
-    title.innerHTML = book.title;
+    title.innerHTML = "Title: " + book.title;
     div.appendChild(title);
 
     let author = document.createElement("p");
-    author.innerHTML = book.author;
+    author.innerHTML = "Author: " + book.author;
     div.appendChild(author);
 
     let pages = document.createElement("p");
-    pages.innerHTML = book.pages;
+    pages.innerHTML = "Pages: " + book.pages;
     div.appendChild(pages);
 
     let read = document.createElement("p");
@@ -69,10 +69,13 @@ function displayLibrary() {
       if (read.innerHTML === "Read") {
         read.innerHTML = "Not Read";
         read.style.backgroundColor = "#EF6F6C";
+        book.read = false;
       } else {
         read.innerHTML = "Read";
         read.style.backgroundColor = "#05F140";
+        book.read = true;
       }
+      console.log(myLibrary);
     });
     div.appendChild(read);
 

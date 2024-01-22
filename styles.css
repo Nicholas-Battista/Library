@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -30,10 +31,11 @@ body {
 .addBook {
   margin-top: 2%;
   border: none;
-  background-color: white;
+  background-color: transparent;
   font-weight: bold;
   font-size: 1rem;
   padding: 1rem 2rem;
+  z-index: 1;
 }
 
 .addBook:hover {
@@ -64,6 +66,7 @@ form {
   position: absolute;
   bottom: 50%;
   display: flex;
+  background-color: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -81,6 +84,14 @@ form {
   display: none;
 }
 
+fieldset {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -91,4 +102,14 @@ form {
 .footer img {
   width: 30px;
   height: 30px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.5);
+  z-index: 1;
 }

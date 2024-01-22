@@ -34,6 +34,7 @@ function handleSubmitBtn(event) {
   addToLibrary(newBook);
   form.reset();
   form.classList.toggle("is-inactive");
+  document.body.classList.toggle("overlay");
   displayLibrary();
 }
 
@@ -67,4 +68,5 @@ function displayLibrary() {
 
 addBook.addEventListener("click", () => {
   form.classList.toggle("is-inactive");
+  document.body.classList.toggle("overlay");
 });

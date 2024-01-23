@@ -47,15 +47,15 @@ function displayLibrary() {
     let div = document.createElement("div");
 
     let title = document.createElement("p");
-    title.innerHTML = "Title: " + book.title;
+    title.innerHTML = "<span class='label'>Title:</span> " + book.title;
     div.appendChild(title);
 
     let author = document.createElement("p");
-    author.innerHTML = "Author: " + book.author;
+    author.innerHTML = "<span class='label'>Author:</span> " + book.author;
     div.appendChild(author);
 
     let pages = document.createElement("p");
-    pages.innerHTML = "Pages: " + book.pages;
+    pages.innerHTML = "<span class='label'>Pages:</span> " + book.pages;
     div.appendChild(pages);
 
     let read = document.createElement("p");

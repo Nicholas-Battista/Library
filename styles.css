@@ -244,7 +244,7 @@ fieldset {
 
 .label {
   font-weight: bold;
-  color: var(--lightblack); /* Change this to your desired color */
+  color: var(--lightblack);
 }
 
 .shake {
@@ -268,5 +268,15 @@ fieldset {
   60%,
   80% {
     transform: translateX(10px);
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .form {
+    bottom: 30%;
   }
 }

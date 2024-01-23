@@ -25,6 +25,20 @@ function addToLibrary(book) {
 
 function handleSubmitBtn(event) {
   event.preventDefault();
+  if (
+    inputs.inputTitle.value.trim() === "" ||
+    inputs.inputAuthor.value.trim() === "" ||
+    inputs.inputPages.value.trim() === ""
+  ) {
+    form.classList.add("shake");
+
+    // Remove the 'shake' class after the animation completes
+    setTimeout(() => {
+      form.classList.remove("shake");
+    }, 1000);
+
+    return;
+  }
 
   const newBook = new Book(
     inputs.inputTitle.value,

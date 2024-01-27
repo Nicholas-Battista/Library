@@ -12,15 +12,17 @@ const inputs = {
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 
-function addToLibrary(book) {
-  myLibrary.push(book);
+  addToLibrary() {
+    myLibrary.push(this);
+  }
 }
 
 function handleSubmitBtn(event) {
@@ -32,7 +34,6 @@ function handleSubmitBtn(event) {
   ) {
     form.classList.add("shake");
 
-    // Remove the 'shake' class after the animation completes
     setTimeout(() => {
       form.classList.remove("shake");
     }, 1000);
@@ -46,7 +47,7 @@ function handleSubmitBtn(event) {
     inputs.inputPages.value,
     inputs.inputRead.checked
   );
-  addToLibrary(newBook);
+  newBook.addToLibrary();
   form.reset();
   form.classList.toggle("is-inactive");
   document.body.classList.toggle("overlay");
